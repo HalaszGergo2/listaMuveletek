@@ -14,24 +14,29 @@
         <h1>Listák kezelése</h1>
     </header>
     <div class="urlap">
-        <form >
+        <form class="was-validated">
             <div class="mb-3 mt-3">
               <label for="nev" class="form-label">Név:</label>
-              <input type="text" class="form-control" id="nev" placeholder="Gipsz Jakab" name="nev">
+              <input type="text" class="form-control" id="nev" placeholder="Gipsz Jakab" name="nev" pattern="^[A-Z][a-zA-Z ]{3,}$" required>
+              <div class="valid-feedback">Ok</div>
+              <div class="invalid-feedback">Kötelező mező!</div>
             </div>
             <div class="mb-3">
               <label for="kor" class="form-label">Kor:</label>
-              <input type="number" class="form-control" id="kor" min="10" max="100" name="kor">
+              <input type="number" class="form-control" id="kor" min="10" max="120" name="kor" required>
+              <div class="valid-feedback">Ok</div>
+              <div class="invalid-feedback">A kor 0-120 között lehet!</div>
             </div>
             <div class="form-check">
-                <input type="radio" class="form-check-input" id="ferfi" name="nem" value="true" checked>Férfi
+                <input type="radio" class="form-check-input" id="ferfi" name="nem" value="ferfi" checked>Férfi
                 <label class="form-check-label" for="radio1"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" id="no" name="nem" value="false">Nő
+                <input type="radio" class="form-check-input" id="no" name="nem" value="no">Nő
                 <label class="form-check-label" for="radio2"></label>
+
               </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
     <div class="be">

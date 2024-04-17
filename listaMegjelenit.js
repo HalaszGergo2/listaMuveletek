@@ -21,3 +21,4 @@ export function megjelenit(txt){
     const divELEM = $(".adatok")
     divELEM.html(txt)
 }
+
