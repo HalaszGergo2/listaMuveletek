@@ -3,7 +3,7 @@ import { init } from "./main.js"
 export function ujAdat(lista){
     const nevELEM = $("#nev")
     const korELEM = $("#kor")
-    const nemELEM = $("input[name='nem']:checked")
+    
     const submitELEM = $("#submit")
     const adatOBJ = {
         nev:"",
@@ -12,9 +12,10 @@ export function ujAdat(lista){
     }
     submitELEM.on("click", function(event){
        event.preventDefault();
+       const nemELEM = $("input[name='nem']:checked")
        adatOBJ.nev = nevELEM.val()
        adatOBJ.kor = Number(korELEM.val())
-       adatOBJ.nem = nemELEM.val()==="true" ? true : false
+       adatOBJ.nem = nemELEM.val()
        console.log(adatOBJ)
        const validELEM = $(".valid-feedback")
        const nevVALIDE = validELEM.eq(0).css("display") !=="none"
